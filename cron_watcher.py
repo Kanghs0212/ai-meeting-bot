@@ -34,9 +34,8 @@ def run_once():
     # 1. 처리했던 기록 불러오기
     processed_ids = load_processed_files()
 
-    # 2. 딜레이를 대비해 넉넉하게 '최근 24시간' 내의 파일 검색
-    time_threshold = (datetime.datetime.utcnow() - datetime.timedelta(days=1)).isoformat() + "Z"
-
+    # 2. 크론 주기를 고려해 딱 '최근 10분' 내에 올라온 파일만 검색! (과거 파일 무시)
+    time_threshold = (datetime.datetime.utcnow() - datetime.timedelta(minutes=30)).isoformat() + "Z"
     query = (
         f"'{folder_id}' in parents and trashed = false and "
         f"(mimeType = 'text/plain' or mimeType = 'application/vnd.google-apps.document' or "
