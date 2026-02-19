@@ -2,7 +2,9 @@ name: Auto Meeting Minutes Cron
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # 매 5분마다 실행
+    # 10분 간격으로, UTC 기준 23시 및 0시~13시 사이에만 실행
+    # (한국 시간 기준: 08:00 ~ 22:50 사이에 10분 간격 실행)
+    - cron: '*/10 0-13,23 * * *'
   workflow_dispatch:
 
 jobs:
