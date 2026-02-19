@@ -34,7 +34,7 @@ jobs:
         echo "$TERMINOLOGY_JSON" > terminology.json
 
     - name: 봇 실행!
-      run: python cron_watcher.py
+      run: python -u cron_watcher.py
     
     - name: 처리 완료 목록 GitHub에 저장하기
       run: |
