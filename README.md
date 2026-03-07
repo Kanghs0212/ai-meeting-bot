@@ -10,6 +10,9 @@
 ## 📌 프로젝트 개요 (Overview)
 **EyeNote**는 회의 음성 파일이 업로드되는 순간부터 최종 회의록이 사내 위키(Notion)에 정리되기까지의 전 과정을 자동화한 파이프라인입니다. 
 단순한 AI 요약을 넘어, 사내 고유 명사(Context)를 주입하고 2차 교차 검증 로직을 도입하여 **LLM의 고질적인 문제인 할루시네이션(환각)을 최소화**한 것이 특징입니다.
+ 회의 내용 녹음본을 업로드하기만 하면 자동으로 요약까지 되어 지식 관리에 용이해집니다.
+
+</br>
 
 ## 회의록 예시 이미지
 ※ 보안 규정 준수를 위해 일부 민감한 데이터(회의 내용 등)는 블라인드 처리하였습니다. 양해부탁드립니다.
@@ -18,6 +21,8 @@
   <img align="center" width="49%"  height="652" alt="제목 없는 디자인 (4)" src="https://github.com/user-attachments/assets/e9b5df87-5c61-4311-a64e-88ae1530f7fc" />
   <img align="center" width="49%" height="700" alt="제목 없는 디자인 (2)" src="https://github.com/user-attachments/assets/04dc9023-a781-4165-be83-283967bc74f1" />
 </p>
+
+</br>
 
 ## ✨ 주요 기능 (Key Features)
 * **자동화된 워크플로우 (Watcher & Drive Loader)**
@@ -30,6 +35,8 @@
 * **Notion 자동 연동 및 아카이빙**
   * `notion_uploader.py`: 생성된 회의록 구조(주요 안건, 결정 사항, To-Do List 등)를 Notion API를 통해 사내 데이터베이스에 자동 업로드합니다.
 
+</br>
+
 ## ⚙️ 시스템 동작 원리 (Architecture)
 1. **Trigger**: 회의 종료 후 녹음 파일을 지정된 Google Drive 폴더에 업로드.
 2. **Fetch**: `watcher.py`와 `drive_loader.py`가 이를 감지하고 로컬 환경으로 가져옴.
@@ -37,6 +44,8 @@
 4. **Context Injection**: `update_term.py`를 통해 사내 도메인 지식 매핑.
 5. **Summarize**: `gemini_engine.py`가 텍스트와 컨텍스트를 바탕으로 회의록 형식으로 요약 및 검증.
 6. **Deploy**: `notion_uploader.py`가 최종 결과물을 Notion 페이지에 퍼블리싱.
+
+</br>
 
 ## 🛠 사전 준비 및 설치 (Prerequisites & Setup)
 
