@@ -11,6 +11,14 @@
 **EyeNote**는 회의 음성 파일이 업로드되는 순간부터 최종 회의록이 사내 위키(Notion)에 정리되기까지의 전 과정을 자동화한 파이프라인입니다. 
 단순한 AI 요약을 넘어, 사내 고유 명사(Context)를 주입하고 2차 교차 검증 로직을 도입하여 **LLM의 고질적인 문제인 할루시네이션(환각)을 최소화**한 것이 특징입니다.
 
+## 회의록 예시 이미지
+※ 보안 규정 준수를 위해 일부 민감한 데이터(회의 내용 등)는 블라인드 처리하였습니다. 양해부탁드립니다.
+
+<p align="center">
+  <img align="center" width="49%"  height="652" alt="제목 없는 디자인 (4)" src="https://github.com/user-attachments/assets/e9b5df87-5c61-4311-a64e-88ae1530f7fc" />
+  <img align="center" width="49%" height="700" alt="제목 없는 디자인 (2)" src="https://github.com/user-attachments/assets/04dc9023-a781-4165-be83-283967bc74f1" />
+</p>
+
 ## ✨ 주요 기능 (Key Features)
 * **자동화된 워크플로우 (Watcher & Drive Loader)**
   * Google Drive의 특정 폴더를 모니터링하여 새로운 회의 음성 파일이나 텍스트 전사본이 업로드되면 자동으로 다운로드하고 프로세스를 시작합니다.
