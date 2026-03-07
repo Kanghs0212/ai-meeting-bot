@@ -1,4 +1,4 @@
-# 📝 EyeNote: AI 기반 회의록 자동화 및 지식 관리 파이프라인
+# 📝 EyeNote: AI 기반 회의록 자동화 및 관리 파이프라인
 
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
